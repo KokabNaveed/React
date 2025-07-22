@@ -9,6 +9,7 @@ import Array from './ArrayofObjects'
 import Repeat from './RepeatComponent'
 import Clock from './Clock'
 import College from './College'
+import Effect from './useEffectHook'
 
 
 const fruit = (name) => {
@@ -154,12 +155,17 @@ function App() {
     <>
       <h1>Hello Kokab</h1>
 
+      <Effect />
+
       {
-        college.map((college) => (
-          <College college={college}/>
+        college.map((college, index) => (
+          <div key={index}>
+            <College college={college} />
+          </div>
+
         ))
       }
-      
+
 
 
       <select onChange={(event) => setColor(event.target.value)} defaultValue={'purple'} name="time" id="time">

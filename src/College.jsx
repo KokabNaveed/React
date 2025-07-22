@@ -12,8 +12,9 @@ function College({ college }) {
                 <h3>Name: {college.name}</h3>
                 <h3>City: {college.city}</h3>
                 <h3>Web: {college.web}</h3>
-            </div>
+            
             <Student student={college.student}/>
+            </div>
         </>
     )
 }
