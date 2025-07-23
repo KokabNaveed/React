@@ -145,6 +145,7 @@ function App() {
 
   const [display, setdisplay] = useState(true);
   const [color, setColor] = useState('Purple');
+  const [count, setCounter] = useState(0);
 
 
 
@@ -156,7 +157,14 @@ function App() {
     <>
       <h1>Hello Kokab</h1>
 
-      <LifeCycle/>
+
+      {
+        display ? <LifeCycle count={count} /> : null
+      }
+      <button onClick={() => setCounter(count + 1)}>Counter</button>
+      <button onClick={() => setdisplay(!display)}>Toggle</button>
+
+
 
       <Effect />
 
