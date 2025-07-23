@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import './App.css'
 import Counter from './Counter'
 import State from './State'
@@ -14,6 +14,7 @@ import LifeCycle from './LifeCycle'
 import UseRef from './UseRef'
 import UnControlled from './UnControlled'
 import PassFunction from './PassFunctionAsParameter'
+import Ref from './ForwardRef'
 
 
 const fruit = (name) => {
@@ -161,14 +162,26 @@ function App() {
     alert(name);
   }
 
+  const valueRef = useRef(null);
+  const handlevalue = () => {
+    valueRef.current.focus();
+    valueRef.current.style.color = 'green';
+    valueRef.current.value = '1234';
+  }
+
   return (
     <>
       <h1>Hello Kokab</h1>
 
-      <PassFunction displayname={displayName} name="Kokab"/>
-      <PassFunction displayname={displayName} name="Hafsa"/>
-      <PassFunction displayname={displayName} name="Sabar"/>
-      <PassFunction displayname={displayName} name="Fahad"/>
+      <Ref ref={valueRef}/>
+      <button onClick={handlevalue}>Focus</button>
+      <br />
+
+      
+      <PassFunction displayname={displayName} name="Kokab" />
+      <PassFunction displayname={displayName} name="Hafsa" />
+      <PassFunction displayname={displayName} name="Sabar" />
+      <PassFunction displayname={displayName} name="Fahad" />
 
       <UnControlled />
 
