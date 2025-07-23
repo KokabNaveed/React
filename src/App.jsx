@@ -15,6 +15,7 @@ import UseRef from './UseRef'
 import UnControlled from './UnControlled'
 import PassFunction from './PassFunctionAsParameter'
 import Ref from './ForwardRef'
+import HandleForm from './HandleForm'
 
 
 const fruit = (name) => {
@@ -173,11 +174,13 @@ function App() {
     <>
       <h1>Hello Kokab</h1>
 
+      <HandleForm/>
+      
       <Ref ref={valueRef}/>
       <button onClick={handlevalue}>Focus</button>
       <br />
 
-      
+
       <PassFunction displayname={displayName} name="Kokab" />
       <PassFunction displayname={displayName} name="Hafsa" />
       <PassFunction displayname={displayName} name="Sabar" />
