@@ -13,6 +13,7 @@ import Effect from './useEffectHook'
 import LifeCycle from './LifeCycle'
 import UseRef from './UseRef'
 import UnControlled from './UnControlled'
+import PassFunction from './PassFunctionAsParameter'
 
 
 const fruit = (name) => {
@@ -21,6 +22,7 @@ const fruit = (name) => {
 
 
 function App() {
+
   const userData = [
     {
       name: 'KOKAB',
@@ -155,16 +157,27 @@ function App() {
     alert("ander wala " + name); // ander wala chalta he jub ander or bahir same name sy hun
   }
 
+  const displayName = (name) => {
+    alert(name);
+  }
+
   return (
     <>
       <h1>Hello Kokab</h1>
 
-      <UnControlled/>
+      <PassFunction displayname={displayName} name="Kokab"/>
+      <PassFunction displayname={displayName} name="Hafsa"/>
+      <PassFunction displayname={displayName} name="Sabar"/>
+      <PassFunction displayname={displayName} name="Fahad"/>
 
-      <UseRef/>
+      <UnControlled />
+
+      <UseRef />
+
       {
         display ? <LifeCycle count={count} /> : null
       }
+
       <button onClick={() => setCounter(count + 1)}>Counter</button>
       <button onClick={() => setdisplay(!display)}>Toggle</button>
 
