@@ -16,6 +16,7 @@ import UnControlled from './UnControlled'
 import PassFunction from './PassFunctionAsParameter'
 import Ref from './ForwardRef'
 import HandleForm from './HandleForm'
+import Transition from './Transition'
 
 
 const fruit = (name) => {
@@ -174,8 +175,10 @@ function App() {
     <>
       <h1>Hello Kokab</h1>
 
-      <HandleForm/>
+      <Transition/>
       
+      <HandleForm/>
+
       <Ref ref={valueRef}/>
       <button onClick={handlevalue}>Focus</button>
       <br />
