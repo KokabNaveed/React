@@ -10,6 +10,7 @@ import Repeat from './RepeatComponent'
 import Clock from './Clock'
 import College from './College'
 import Effect from './useEffectHook'
+import LifeCycle from './LifeCycle'
 
 
 const fruit = (name) => {
@@ -154,6 +155,8 @@ function App() {
   return (
     <>
       <h1>Hello Kokab</h1>
+
+      <LifeCycle/>
 
       <Effect />
 
