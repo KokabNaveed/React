@@ -12,6 +12,7 @@ import College from './College'
 import Effect from './useEffectHook'
 import LifeCycle from './LifeCycle'
 import UseRef from './UseRef'
+import UnControlled from './UnControlled'
 
 
 const fruit = (name) => {
@@ -157,6 +158,8 @@ function App() {
   return (
     <>
       <h1>Hello Kokab</h1>
+
+      <UnControlled/>
 
       <UseRef/>
       {
