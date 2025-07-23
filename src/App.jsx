@@ -11,6 +11,7 @@ import Clock from './Clock'
 import College from './College'
 import Effect from './useEffectHook'
 import LifeCycle from './LifeCycle'
+import UseRef from './UseRef'
 
 
 const fruit = (name) => {
@@ -157,7 +158,7 @@ function App() {
     <>
       <h1>Hello Kokab</h1>
 
-
+      <UseRef/>
       {
         display ? <LifeCycle count={count} /> : null
       }
