@@ -4,6 +4,7 @@
 import { useTransition } from "react"
 
 function Transition(){
+    
     const [pending,setTransition]=useTransition();
 
     const handleTransition=()=>{
