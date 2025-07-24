@@ -18,6 +18,8 @@ import Ref from './ForwardRef'
 import HandleForm from './HandleForm'
 import Transition from './Transition'
 import Derived from './DerivedState'
+import AddUser from './LiftingUpState'
+import DisplayUser from './DisplayUser'
 
 
 const fruit = (name) => {
@@ -172,12 +174,17 @@ function App() {
     valueRef.current.value = '1234';
   }
 
+  const [user,setuser]=useState('');
+
   return (
     <>
       <h1>Hello Kokab</h1>
 
+      <AddUser adduser={setuser}/>
+      <DisplayUser newuser={user}/>
+
       <Derived/>
-      
+
       <Transition/>
 
       <HandleForm/>
