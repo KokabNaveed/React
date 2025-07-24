@@ -23,6 +23,7 @@ import DisplayUser from './DisplayUser'
 import ObjectsInState from './UpdateObjectsInState'
 import UpdateArray from './UpdatingArrayInState'
 import UseActionHook from './UseAction'
+import IdHook from './UseIdHook'
 
 
 const fruit = (name) => {
@@ -183,6 +184,8 @@ function App() {
   return (
     <>
       <h1>Hello Kokab</h1>
+
+      <IdHook/>
       
       <UseActionHook/>
 
