@@ -21,6 +21,7 @@ import Derived from './DerivedState'
 import AddUser from './LiftingUpState'
 import DisplayUser from './DisplayUser'
 import ObjectsInState from './UpdateObjectsInState'
+import UpdateArray from './UpdatingArrayInState'
 
 
 const fruit = (name) => {
@@ -169,6 +170,7 @@ function App() {
   }
 
   const valueRef = useRef(null);
+
   const handlevalue = () => {
     valueRef.current.focus();
     valueRef.current.style.color = 'green';
@@ -180,6 +182,8 @@ function App() {
   return (
     <>
       <h1>Hello Kokab</h1>
+      <UpdateArray/>
+
       <ObjectsInState/>
 
       <AddUser adduser={setuser}/>
@@ -241,8 +245,10 @@ function App() {
 
       {
         // repeat component
-        userData.map((item) => (
-          <Repeat user={item} />
+        userData.map((item,index) => (
+          <div key={index}>
+            <Repeat user={item} />
+          </div>
         ))
       }
 

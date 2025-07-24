@@ -2,8 +2,8 @@ function Student({student}){
     return(
         <>
         {
-            student.map((student)=>(
-                <div style={{
+            student.map((student,index)=>(
+                <div key={index} style={{
                 backgroundColor: "white",
                 color: "purple",
                 margin: "10px",
