@@ -17,6 +17,7 @@ import PassFunction from './PassFunctionAsParameter'
 import Ref from './ForwardRef'
 import HandleForm from './HandleForm'
 import Transition from './Transition'
+import Derived from './DerivedState'
 
 
 const fruit = (name) => {
@@ -175,8 +176,10 @@ function App() {
     <>
       <h1>Hello Kokab</h1>
 
-      <Transition/>
+      <Derived/>
       
+      <Transition/>
+
       <HandleForm/>
 
       <Ref ref={valueRef}/>
