@@ -20,6 +20,7 @@ import Transition from './Transition'
 import Derived from './DerivedState'
 import AddUser from './LiftingUpState'
 import DisplayUser from './DisplayUser'
+import ObjectsInState from './UpdateObjectsInState'
 
 
 const fruit = (name) => {
@@ -179,6 +180,7 @@ function App() {
   return (
     <>
       <h1>Hello Kokab</h1>
+      <ObjectsInState/>
 
       <AddUser adduser={setuser}/>
       <DisplayUser newuser={user}/>
