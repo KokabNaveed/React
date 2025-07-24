@@ -22,6 +22,7 @@ import AddUser from './LiftingUpState'
 import DisplayUser from './DisplayUser'
 import ObjectsInState from './UpdateObjectsInState'
 import UpdateArray from './UpdatingArrayInState'
+import UseActionHook from './UseAction'
 
 
 const fruit = (name) => {
@@ -182,6 +183,10 @@ function App() {
   return (
     <>
       <h1>Hello Kokab</h1>
+      
+      <UseActionHook/>
+
+    
       <UpdateArray/>
 
       <ObjectsInState/>
