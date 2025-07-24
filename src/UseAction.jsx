@@ -10,31 +10,33 @@ function UseActionHook() {
         // console.log("kokab",name,password)
 
         if (name && password) {
-            return { message: "Data Submitted Successfully." }
+            return { message: "Data Submitted Successfully." ,name,password}
         }
         else
-            return { error: "Please Fill all Fields" }
+            return { error: "Please Fill all Fields" ,name,password}
     }
 
     const [data, action, pending] = useActionState(handleSubmit, undefined);
 
     return (
         <>
+        <h3>UseAction Hook in React JS </h3>
             <form action={action}>
-                <input type="text" placeholder="Enter Name" name="name" />
+                <input type="text" placeholder="Enter Name" name="name" defaultValue={data?.name}/>
                 <br /><br />
-                <input type="password" placeholder="Enter Password" name="password" />
+                <input type="password" placeholder="Enter Password" name="password" defaultValue={data?.password} />
                 <br /><br />
                 <button disabled={pending}>Submit</button>
-                <br /><br />
-                {
-                    data?.error && <span style={{ color: 'Red' }}>{data?.error}</span>
-                }
-                {
-                    data?.message && <span style={{ color: 'Green' }}>{data?.message}</span>
-                }
             </form>
-
+            <br /><br />
+            {
+                data?.error && <span style={{ color: 'Red' }}>{data?.error}</span>
+            }
+            {
+                data?.message && <span style={{ color: 'Green' }}>{data?.message}</span>
+            }
+            <h3>Name : {data?.name}</h3>
+            <h3>Password : {data?.password}</h3>
         </>
     )
 }
