@@ -4,7 +4,9 @@ function IdHook() {
 
 
     const FormComponent = () => {
+
         const user = useId();
+        // you can make multiple useid's (two separate for name and passowrd)
         return (
             <>
                 <form action="">
