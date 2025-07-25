@@ -24,6 +24,7 @@ import ObjectsInState from './UpdateObjectsInState'
 import UpdateArray from './UpdatingArrayInState'
 import UseActionHook from './UseAction'
 import IdHook from './UseIdHook'
+import CustomHook from './CustomHook'
 
 
 const fruit = (name) => {
@@ -185,8 +186,10 @@ function App() {
     <>
       <h1>Hello Kokab</h1>
 
+      <CustomHook/>
+
       <IdHook/>
-      
+
       <UseActionHook/>
 
     
