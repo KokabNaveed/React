@@ -10,3 +10,10 @@
 .user-list-head{
     font-weight: bolder;
 }
+
+.list-button{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 400px;
+}
