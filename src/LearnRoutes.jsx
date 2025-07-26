@@ -19,8 +19,8 @@ function LearnRoutes() {
             <Routes>
                 <Route element={<NavBar />}> {/* layout route ...only for home, about and login pages, navbar will show */}
                     <Route path="/" element={<Home />} />
-                    <Route path="/user" element={<Users />}/>
-                    <Route path="/userdetail/:id" element={<UserDetails />}/>
+                    <Route path="/user/list?" element={<Users />}/> 
+                    <Route path="/userdetail/:id/:name?" element={<UserDetails />}/>
                     <Route path="pk">
                         <Route path="/pk/user">
                             <Route path="/pk/user/about" element={<About />} />
@@ -37,9 +37,9 @@ function LearnRoutes() {
 
                 
 
-                <Route path="/*" element={<Navigate to={"/login"} />} /> {/* Navigate to login page*/}
+                {/* <Route path="/*" element={<Navigate to={"/login"} />} />  */} {/* Navigate to login page*/}
 
-                {/* <Route path="/*" element={<PageNotFound/>} /> */} {/* Write new jsx page address */}
+                <Route path="/*" element={<PageNotFound/>} /> {/* Write new jsx page address */}
 
                 {/* <Route path="/*" element={<h1>Page Not Found <br /> Error 404</h1>} /> */} { /* Write direct HTML here */}
 
