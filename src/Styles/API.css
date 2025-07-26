@@ -1,0 +1,12 @@
+.user-list{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #ccc;
+    padding: 2px;
+    margin: 0px;
+    list-style: none;
+}
+
+.user-list-head{
+    font-weight: bolder;
+}
