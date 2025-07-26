@@ -12,18 +12,20 @@ import Course from "./Courses";
 function LearnRoutes() {
     return (
         <>
-            <NavBar />
+            {/* <NavBar /> */}
 
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/university" element={<University2/>}>
-                    <Route path="department1" element={<Department1/>}/>
-                    <Route path="detail" element={<Details/>}/>
-                    <Route path="course" element={<Course/>}/>
+                <Route element={<NavBar />}>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/login" element={<Login />} />
                 </Route>
-                
+                <Route path="/university" element={<University2 />}>
+                    <Route path="department1" element={<Department1 />} />
+                    <Route path="detail" element={<Details />} />
+                    <Route path="course" element={<Course />} />
+                </Route>
+
                 <Route path="/*" element={<Navigate to={"/login"} />} /> {/* Navigate to login page*/}
 
                 {/* <Route path="/*" element={<PageNotFound/>} /> */} {/* Write new jsx page address */}
