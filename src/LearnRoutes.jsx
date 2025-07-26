@@ -24,7 +24,7 @@ function LearnRoutes() {
                 <Route path="/university" element={<University2 />}>
                     <Route path="department1" element={<Department1 />} />
                     <Route path="detail" element={<Details />} />
-                    <Route index element={<Course />} /> {/* index route will shoe default value */}
+                    <Route index element={<Course />} /> {/* index route will show default value of that component on parent one */}
                 </Route>
 
                 <Route path="/*" element={<Navigate to={"/login"} />} /> {/* Navigate to login page*/}
