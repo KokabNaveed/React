@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router";
+import { NavLink, Link, Outlet } from "react-router";
 import './Styles/header.css'
 
 function NavBar() {
@@ -11,22 +11,22 @@ function NavBar() {
                 <div>
                     <ul>
                         <li>
-                            <Link to='/' className="link">Home</Link>
+                            <NavLink to='/' className={({isActive})=> isActive? 'custom-Active link':'link'}>Home</NavLink>
                         </li>
                         <li>
-                            <Link to='/pk/user/about' className="link">About</Link>
+                            <NavLink to='/pk/user/about' className="link">About</NavLink>
                         </li>
                         <li>
-                            <Link to='/pk/user/login' className="link">Login</Link>
+                            <NavLink to='/pk/user/login' className="link">Login</NavLink>
                         </li>
                         <li>
-                            <Link to='/university' className="link">University</Link>
+                            <NavLink to='/university' className="link">University</NavLink>
                         </li>
                         <li>
-                            <Link to='/user' className="link">Users</Link>
+                            <NavLink to='/user' className="link">Users</NavLink>
                         </li>
                         <li>
-                            <Link to='/user/list' className="link">List</Link>
+                            <NavLink to='/user/list' className="link">List</NavLink>
                         </li>
                     </ul>
                 </div>
