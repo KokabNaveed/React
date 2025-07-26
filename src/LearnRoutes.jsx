@@ -8,6 +8,8 @@ import University2 from "./Uniiversity";
 import Department1 from "./Departmentt";
 import Details from "./Details";
 import Course from "./Courses";
+import Users from "./Users";
+import UserDetails from "./UserDetails";
 
 function LearnRoutes() {
     return (
@@ -17,6 +19,8 @@ function LearnRoutes() {
             <Routes>
                 <Route element={<NavBar />}> {/* layout route ...only for home, about and login pages, navbar will show */}
                     <Route path="/" element={<Home />} />
+                    <Route path="/user" element={<Users />}/>
+                    <Route path="/userdetail/:id" element={<UserDetails />}/>
                     <Route path="pk">
                         <Route path="/pk/user">
                             <Route path="/pk/user/about" element={<About />} />
@@ -30,6 +34,8 @@ function LearnRoutes() {
                     <Route path="detail" element={<Details />} />
                     <Route index element={<Course />} /> {/* index route will show default value of that component on parent one */}
                 </Route>
+
+                
 
                 <Route path="/*" element={<Navigate to={"/login"} />} /> {/* Navigate to login page*/}
 
