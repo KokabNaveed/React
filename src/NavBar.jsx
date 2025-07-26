@@ -14,10 +14,10 @@ function NavBar() {
                         <Link to='/' className="link">Home</Link>
                     </li>
                     <li>
-                        <Link to='/about' className="link">About</Link>
+                        <Link to='/pk/user/about' className="link">About</Link>
                     </li>
                     <li>
-                        <Link to='/login' className="link">Login</Link>
+                        <Link to='/pk/user/login' className="link">Login</Link>
                     </li>
                     <li>
                         <Link to='/university' className="link">University</Link>

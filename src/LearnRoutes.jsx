@@ -17,8 +17,12 @@ function LearnRoutes() {
             <Routes>
                 <Route element={<NavBar />}> {/* layout route ...only for home, about and login pages, navbar will show */}
                     <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/login" element={<Login />} />
+                    <Route path="pk">
+                        <Route path="/pk/user">
+                            <Route path="/pk/user/about" element={<About />} />
+                            <Route path="/pk/user/login" element={<Login />} />
+                        </Route>
+                    </Route>
                 </Route>
 
                 <Route path="/university" element={<University2 />}>
