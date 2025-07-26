@@ -25,6 +25,8 @@ import UpdateArray from './UpdatingArrayInState'
 import UseActionHook from './UseAction'
 import IdHook from './UseIdHook'
 import CustomHook from './CustomHook'
+import University from './University'
+import { SubjectContext } from './Context'
 
 
 const fruit = (name) => {
@@ -180,33 +182,53 @@ function App() {
     valueRef.current.value = '1234';
   }
 
-  const [user,setuser]=useState('');
+  const [user, setuser] = useState('');
+
+  const [subject, setSubject] = useState('History')
 
   return (
     <>
       <h1>Hello Kokab</h1>
 
-      <CustomHook/>
+      <div style={{background:'skyblue', padding: '20px',color:'black'}}>
+        <SubjectContext.Provider value={subject}>
+          <select value={subject} name="" id="" onChange={(e)=>setSubject(e.target.value)}>
+            <option value=" ">Select a Subject</option>
+            <option value="Maths">Maths</option>
+            <option value="English">English</option>
+            <option value="Urdu">Urdu</option>
+          </select>
+          <h3>Context API</h3>
+          <button onClick={()=>setSubject('')}>Clear</button>
+          <University />
+        </SubjectContext.Provider>
+      </div>
 
-      <IdHook/>
 
-      <UseActionHook/>
 
-    
-      <UpdateArray/>
 
-      <ObjectsInState/>
 
-      <AddUser adduser={setuser}/>
-      <DisplayUser newuser={user}/>
+      <CustomHook />
 
-      <Derived/>
+      <IdHook />
 
-      <Transition/>
+      <UseActionHook />
 
-      <HandleForm/>
 
-      <Ref ref={valueRef}/>
+      <UpdateArray />
+
+      <ObjectsInState />
+
+      <AddUser adduser={setuser} />
+      <DisplayUser newuser={user} />
+
+      <Derived />
+
+      <Transition />
+
+      <HandleForm />
+
+      <Ref ref={valueRef} />
       <button onClick={handlevalue}>Focus</button>
       <br />
 
@@ -256,7 +278,7 @@ function App() {
 
       {
         // repeat component
-        userData.map((item,index) => (
+        userData.map((item, index) => (
           <div key={index}>
             <Repeat user={item} />
           </div>
