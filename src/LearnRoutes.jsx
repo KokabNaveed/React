@@ -15,15 +15,16 @@ function LearnRoutes() {
             {/* <NavBar /> */}
 
             <Routes>
-                <Route element={<NavBar />}>
+                <Route element={<NavBar />}> {/* layout route ...only for home, about and login pages, navbar will show */}
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/login" element={<Login />} />
                 </Route>
+
                 <Route path="/university" element={<University2 />}>
                     <Route path="department1" element={<Department1 />} />
                     <Route path="detail" element={<Details />} />
-                    <Route path="course" element={<Course />} />
+                    <Route index element={<Course />} /> {/* index route will shoe default value */}
                 </Route>
 
                 <Route path="/*" element={<Navigate to={"/login"} />} /> {/* Navigate to login page*/}
