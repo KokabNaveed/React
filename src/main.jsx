@@ -6,12 +6,14 @@ import { BrowserRouter } from 'react-router'
 import LearnAPI from './LearnAPI.jsx'
 import Lazyloading from './LazyLoading.jsx'
 import LearnRoutes from './LearnRoutes.jsx'
+import ColorMixer from './ColorMixer.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     {/* <App/> */}
     {/* <LearnRoutes /> */}
     {/* <LearnAPI/>   */}
-    <Lazyloading/>
+    {/* <Lazyloading/> */}
+    <ColorMixer/>
   </BrowserRouter>
 )
