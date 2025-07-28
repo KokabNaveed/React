@@ -1,33 +1,38 @@
 import { useState } from "react"
+import { useNavigate } from "react-router";
 
 export default function UserAdd() {
-    
-    const [name,setname]=useState('');
-    const[email,setEmail]=useState('');
-    const[age,setAge]=useState('');
 
-    const saveUser=async()=>{
-        console.log(name,age,email);
-        const url ="http://localhost:3000/users";
-        let response = await fetch(url,{
-            method:'Post',
-            body:JSON.stringify({name,email,age})
+    const [name, setname] = useState('');
+    const [email, setEmail] = useState('');
+    const [age, setAge] = useState('');
+
+    const navigate= useNavigate();
+
+    const saveUser = async () => {
+        console.log(name, age, email);
+        const url = "http://localhost:3000/users";
+        let response = await fetch(url, {
+            method: 'Post',
+            body: JSON.stringify({ name, email, age })
         });
 
-        response=await response.json();
-        if(response)
-            alert("New user Added")
+        response = await response.json();
+        if (response) {
+            alert("New user Added");
+            navigate('/');
+        }
 
     }
 
     return (
-        <div style={{textAlign:'center'}}>
+        <div style={{ textAlign: 'center' }}>
             <h1>Add New User</h1>
-            <input type="text" onChange={(e)=>setname(e.target.value)} placeholder="Enter Name" />
+            <input type="text" onChange={(e) => setname(e.target.value)} placeholder="Enter Name" />
             <br /><br />
-            <input type="text" onChange={(e)=>setEmail(e.target.value)} placeholder="Enter Email" />
+            <input type="text" onChange={(e) => setEmail(e.target.value)} placeholder="Enter Email" />
             <br /><br />
-            <input type="text" onChange={(e)=>setAge(e.target.value)} placeholder="Enter Age" />
+            <input type="text" onChange={(e) => setAge(e.target.value)} placeholder="Enter Age" />
             <br /><br />
             <button onClick={saveUser}>Add User</button>
 
