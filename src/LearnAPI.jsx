@@ -3,6 +3,7 @@ import './Styles/API.css'
 import UserList from './UserList'
 import UserAdd from './UserAdd'
 import EditUser from './UserEdit'
+import Login from './Login'
 
 export default function LearnAPI() {
 
@@ -18,15 +19,18 @@ export default function LearnAPI() {
                 <li>
                     <NavLink to='/add'>Add New User</NavLink>
                 </li>
+                <li>
+                    <NavLink to='/login'>Login</NavLink>
+                </li>
             </ul>
             <Routes>
                 <Route path='/' element={<UserList />} />
                 <Route path='/add' element={<UserAdd />} />
                 <Route path='/edit/:id' element={<EditUser />} />
-
+                <Route path='/login' element={<Login />} />
             </Routes>
 
 
-        </> 
+        </>
     )
 }

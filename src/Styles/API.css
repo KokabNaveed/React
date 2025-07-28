@@ -17,3 +17,16 @@
     list-style: none;
     width: 400px;
 }
+
+.error{
+    border: 1px solid red;
+}
+
+.error:focus{
+    outline: 1px solid red;
+}
+
+.red-color{
+    color: red;
+    margin: 2px;
+}
