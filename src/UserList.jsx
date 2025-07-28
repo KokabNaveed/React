@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import './Styles/API.css'
+import { useNavigate } from "react-router";
 
 export default function UserList() {
 
     const [userData, setuserData] = useState([]);
     const [loading, setLoading] = useState(false);
+    const navigate =useNavigate();
     const url = "http://localhost:3000/users";
 
 
@@ -31,6 +33,10 @@ export default function UserList() {
         }
     }
 
+    const edituser =(id)=>{
+        navigate('/edit/'+id);
+    }
+
 
     return (
         <>
@@ -48,7 +54,11 @@ export default function UserList() {
                             <li>{user.name}</li>
                             <li>{user.email}</li>
                             <li>{user.age}</li>
-                            <li><button onClick={() => deleteuser(user.id)}>Delete</button></li>
+                            <li>
+                                <button onClick={() => deleteuser(user.id)}>Delete</button>
+                                <button onClick={() => edituser(user.id)}>Edit</button>
+
+                            </li>
                         </ul>
                     ))
                     : <h1>Data Loading...</h1>
